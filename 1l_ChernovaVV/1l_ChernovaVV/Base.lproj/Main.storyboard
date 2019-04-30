@@ -64,7 +64,7 @@
                                         <state key="normal" title="Sign In"/>
                                         <connections>
                                             <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vPx-kQ-uxE"/>
-                                            <segue destination="gO2-on-H77" kind="presentation" id="3yO-zF-Y9f"/>
+                                            <segue destination="gO2-on-H77" kind="show" identifier="vkWebViewToLoginSegue" id="3yO-zF-Y9f"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Us9-GX-jSS">
@@ -81,11 +81,20 @@
                                             <constraint firstAttribute="width" id="rLJ-rA-qL0"/>
                                         </constraints>
                                     </view>
+                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WIq-ho-yip">
+                                        <rect key="frame" x="40" y="361" width="240" height="128"/>
+                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <wkWebViewConfiguration key="configuration">
+                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                            <wkPreferences key="preferences"/>
+                                        </wkWebViewConfiguration>
+                                    </wkWebView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Y81-Vg-Hwv" firstAttribute="centerX" secondItem="dki-Er-uwb" secondAttribute="centerX" id="0WM-fV-twH"/>
                                     <constraint firstItem="Erc-h4-KRV" firstAttribute="top" secondItem="Us9-GX-jSS" secondAttribute="top" id="2g9-rx-jwt"/>
                                     <constraint firstItem="Ex2-tr-lid" firstAttribute="leading" secondItem="dki-Er-uwb" secondAttribute="leading" constant="15" id="615-4f-dr5"/>
+                                    <constraint firstItem="WIq-ho-yip" firstAttribute="top" secondItem="Ex2-tr-lid" secondAttribute="bottom" constant="48" id="99n-ba-bEX"/>
                                     <constraint firstAttribute="trailing" secondItem="Us9-GX-jSS" secondAttribute="trailing" id="E4R-iG-g6B"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="azn-4h-jV6" secondAttribute="trailing" constant="15" id="EiP-Ks-iK2"/>
                                     <constraint firstItem="Erc-h4-KRV" firstAttribute="centerX" secondItem="dki-Er-uwb" secondAttribute="centerX" id="FOs-oQ-0CM"/>
@@ -95,13 +104,16 @@
                                     <constraint firstItem="azn-4h-jV6" firstAttribute="top" secondItem="bWQ-G3-5PU" secondAttribute="bottom" constant="15" id="N26-UE-uft"/>
                                     <constraint firstItem="Ex2-tr-lid" firstAttribute="top" secondItem="Y81-Vg-Hwv" secondAttribute="bottom" constant="30" id="SSY-Zy-jCJ"/>
                                     <constraint firstItem="Ex2-tr-lid" firstAttribute="leading" secondItem="uT6-w5-v1e" secondAttribute="trailing" id="U5m-eS-Y0w"/>
+                                    <constraint firstAttribute="bottom" secondItem="WIq-ho-yip" secondAttribute="bottom" constant="79" id="VJf-cv-5rl"/>
                                     <constraint firstItem="K9h-zF-833" firstAttribute="top" secondItem="azn-4h-jV6" secondAttribute="bottom" constant="30" id="VcT-UV-aBV"/>
                                     <constraint firstItem="bWQ-G3-5PU" firstAttribute="centerX" secondItem="dki-Er-uwb" secondAttribute="centerX" id="Vsg-fq-8SM"/>
                                     <constraint firstItem="Erc-h4-KRV" firstAttribute="top" secondItem="dki-Er-uwb" secondAttribute="top" constant="40" id="Z0H-td-o9m"/>
+                                    <constraint firstItem="WIq-ho-yip" firstAttribute="centerX" secondItem="Ex2-tr-lid" secondAttribute="centerX" id="du5-Ad-WqE"/>
                                     <constraint firstItem="uT6-w5-v1e" firstAttribute="top" secondItem="dki-Er-uwb" secondAttribute="top" id="fZV-GK-0p9"/>
                                     <constraint firstItem="bWQ-G3-5PU" firstAttribute="top" secondItem="Erc-h4-KRV" secondAttribute="bottom" constant="30" id="gTS-YS-KFS"/>
                                     <constraint firstItem="Ex2-tr-lid" firstAttribute="centerX" secondItem="dki-Er-uwb" secondAttribute="centerX" id="h9H-tP-T3X"/>
                                     <constraint firstItem="K9h-zF-833" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dki-Er-uwb" secondAttribute="leading" constant="15" id="jW2-xv-li3"/>
+                                    <constraint firstItem="WIq-ho-yip" firstAttribute="leading" secondItem="uT6-w5-v1e" secondAttribute="trailing" constant="25" id="kLa-Kw-Nsf"/>
                                     <constraint firstItem="Erc-h4-KRV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dki-Er-uwb" secondAttribute="leading" constant="15" id="kuh-dV-7Vx"/>
                                     <constraint firstItem="K9h-zF-833" firstAttribute="centerX" secondItem="dki-Er-uwb" secondAttribute="centerX" id="nQF-ua-yYL"/>
                                     <constraint firstItem="Erc-h4-KRV" firstAttribute="top" secondItem="Us9-GX-jSS" secondAttribute="bottom" id="oiW-WN-ZSy"/>
@@ -129,6 +141,7 @@
                         <outlet property="loginInput" destination="azn-4h-jV6" id="mlR-6X-DBV"/>
                         <outlet property="passwordInput" destination="Y81-Vg-Hwv" id="O0C-6R-bY4"/>
                         <outlet property="scrollView" destination="dki-Er-uwb" id="m4q-t4-yCk"/>
+                        <outlet property="vkWebView" destination="WIq-ho-yip" id="ike-q6-lxG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

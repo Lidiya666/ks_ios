@@ -36,6 +36,8 @@ class FriendListViewController: UIViewController {
     
     let searchController = UISearchController (searchResultsController: nil )
     
+    let vkService = VkService()
+    
     @IBOutlet weak var friendListView: UITableView!
     
     override func viewDidLoad() {
@@ -44,8 +46,7 @@ class FriendListViewController: UIViewController {
         friendListView.delegate = self
         
         let session = Session.instanse
-        print(session.token)
-        
+        vkService.loadVkData(access_token: session.token, user_id: session.userId, path: "/method/friends.get", fields: "city")
         
         self.navigationController?.delegate = self
 
