@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8300E2EF2232F7EF0090D00F /* FriendListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8300E2EE2232F7EF0090D00F /* FriendListTableViewCell.swift */; };
+		8300E2F12232FA240090D00F /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8300E2F02232FA240090D00F /* FriendListViewController.swift */; };
+		8300E2F7223313510090D00F /* PhotoFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8300E2F6223313510090D00F /* PhotoFriendViewController.swift */; };
+		8300E2FB223315980090D00F /* PhotoFriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8300E2FA223315980090D00F /* PhotoFriendCollectionViewCell.swift */; };
+		8300E2FD223341670090D00F /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8300E2FC223341670090D00F /* GroupsViewController.swift */; };
+		8300E2FF223343100090D00F /* GroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8300E2FE223343100090D00F /* GroupsTableViewCell.swift */; };
+		8300E301223345E20090D00F /* AddGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8300E300223345E20090D00F /* AddGroupTableViewCell.swift */; };
+		8300E303223345FE0090D00F /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8300E302223345FE0090D00F /* AddGroupViewController.swift */; };
+		830EAC672240E73F0047B98A /* NewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830EAC662240E73F0047B98A /* NewsListViewController.swift */; };
+		830EAC692240EB750047B98A /* NewsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830EAC682240EB750047B98A /* NewsListTableViewCell.swift */; };
+		832980B8224E1F1C009E1A9E /* CustomPushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832980B7224E1F1C009E1A9E /* CustomPushAnimator.swift */; };
+		832980BA224E1FAE009E1A9E /* CustomPopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832980B9224E1FAE009E1A9E /* CustomPopAnimator.swift */; };
+		8366004C224D296700C2E635 /* AnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8366004B224D296700C2E635 /* AnimatedTransitioning.swift */; };
 		83EDE8EE2227CBAE004B7147 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EDE8ED2227CBAE004B7147 /* AppDelegate.swift */; };
 		83EDE8F32227CBAE004B7147 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83EDE8F12227CBAE004B7147 /* Main.storyboard */; };
 		83EDE8F62227CBAE004B7147 /* _l_ChernovaVV.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 83EDE8F42227CBAE004B7147 /* _l_ChernovaVV.xcdatamodeld */; };
@@ -27,6 +40,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8300E2EE2232F7EF0090D00F /* FriendListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListTableViewCell.swift; sourceTree = "<group>"; };
+		8300E2F02232FA240090D00F /* FriendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
+		8300E2F6223313510090D00F /* PhotoFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFriendViewController.swift; sourceTree = "<group>"; };
+		8300E2FA223315980090D00F /* PhotoFriendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFriendCollectionViewCell.swift; sourceTree = "<group>"; };
+		8300E2FC223341670090D00F /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
+		8300E2FE223343100090D00F /* GroupsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewCell.swift; sourceTree = "<group>"; };
+		8300E300223345E20090D00F /* AddGroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupTableViewCell.swift; sourceTree = "<group>"; };
+		8300E302223345FE0090D00F /* AddGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
+		830EAC662240E73F0047B98A /* NewsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewController.swift; sourceTree = "<group>"; };
+		830EAC682240EB750047B98A /* NewsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListTableViewCell.swift; sourceTree = "<group>"; };
+		831E5F9D225A32E400E1BF4B /* 1l_ChernovaVV.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = 1l_ChernovaVV.entitlements; sourceTree = "<group>"; };
+		832980B7224E1F1C009E1A9E /* CustomPushAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPushAnimator.swift; sourceTree = "<group>"; };
+		832980B9224E1FAE009E1A9E /* CustomPopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopAnimator.swift; sourceTree = "<group>"; };
+		8366004B224D296700C2E635 /* AnimatedTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTransitioning.swift; sourceTree = "<group>"; };
 		83EDE8EA2227CBAE004B7147 /* 1l_ChernovaVV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 1l_ChernovaVV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83EDE8ED2227CBAE004B7147 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83EDE8F22227CBAE004B7147 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,6 +85,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8300E2F2223304360090D00F /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				8300E2EE2232F7EF0090D00F /* FriendListTableViewCell.swift */,
+				8300E2F02232FA240090D00F /* FriendListViewController.swift */,
+				8300E2F6223313510090D00F /* PhotoFriendViewController.swift */,
+				8300E2FA223315980090D00F /* PhotoFriendCollectionViewCell.swift */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		8300E2F3223304430090D00F /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				8300E2FC223341670090D00F /* GroupsViewController.swift */,
+				8300E2FE223343100090D00F /* GroupsTableViewCell.swift */,
+				8300E300223345E20090D00F /* AddGroupTableViewCell.swift */,
+				8300E302223345FE0090D00F /* AddGroupViewController.swift */,
+			);
+			path = Groups;
+			sourceTree = "<group>";
+		};
+		830EAC652240E6BB0047B98A /* News */ = {
+			isa = PBXGroup;
+			children = (
+				830EAC662240E73F0047B98A /* NewsListViewController.swift */,
+				830EAC682240EB750047B98A /* NewsListTableViewCell.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		833224CF2274D81A00A3EF65 /* Animate */ = {
+			isa = PBXGroup;
+			children = (
+				8366004B224D296700C2E635 /* AnimatedTransitioning.swift */,
+				832980B7224E1F1C009E1A9E /* CustomPushAnimator.swift */,
+				832980B9224E1FAE009E1A9E /* CustomPopAnimator.swift */,
+			);
+			path = Animate;
+			sourceTree = "<group>";
+		};
 		83EDE8E12227CBAE004B7147 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +147,10 @@
 		83EDE8EC2227CBAE004B7147 /* 1l_ChernovaVV */ = {
 			isa = PBXGroup;
 			children = (
+				831E5F9D225A32E400E1BF4B /* 1l_ChernovaVV.entitlements */,
+				830EAC652240E6BB0047B98A /* News */,
+				8300E2F3223304430090D00F /* Groups */,
+				8300E2F2223304360090D00F /* Friends */,
 				83EDE8ED2227CBAE004B7147 /* AppDelegate.swift */,
 				83EDE8F12227CBAE004B7147 /* Main.storyboard */,
 				83EDE9102227CE08004B7147 /* LoginViewController.swift */,
@@ -86,6 +158,7 @@
 				83EDE8F92227CBAF004B7147 /* LaunchScreen.storyboard */,
 				83EDE8FC2227CBAF004B7147 /* Info.plist */,
 				83EDE8F42227CBAE004B7147 /* _l_ChernovaVV.xcdatamodeld */,
+				833224CF2274D81A00A3EF65 /* Animate */,
 			);
 			path = 1l_ChernovaVV;
 			sourceTree = "<group>";
@@ -149,6 +222,14 @@
 				TargetAttributes = {
 					83EDE8E92227CBAE004B7147 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 					83EDE9002227CBAF004B7147 = {
 						CreatedOnToolsVersion = 10.1;
@@ -200,9 +281,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8300E303223345FE0090D00F /* AddGroupViewController.swift in Sources */,
+				8300E2F12232FA240090D00F /* FriendListViewController.swift in Sources */,
 				83EDE9112227CE08004B7147 /* LoginViewController.swift in Sources */,
+				832980B8224E1F1C009E1A9E /* CustomPushAnimator.swift in Sources */,
+				830EAC672240E73F0047B98A /* NewsListViewController.swift in Sources */,
 				83EDE8F62227CBAE004B7147 /* _l_ChernovaVV.xcdatamodeld in Sources */,
+				8300E301223345E20090D00F /* AddGroupTableViewCell.swift in Sources */,
+				832980BA224E1FAE009E1A9E /* CustomPopAnimator.swift in Sources */,
+				8366004C224D296700C2E635 /* AnimatedTransitioning.swift in Sources */,
 				83EDE8EE2227CBAE004B7147 /* AppDelegate.swift in Sources */,
+				8300E2FF223343100090D00F /* GroupsTableViewCell.swift in Sources */,
+				8300E2FD223341670090D00F /* GroupsViewController.swift in Sources */,
+				8300E2FB223315980090D00F /* PhotoFriendCollectionViewCell.swift in Sources */,
+				8300E2EF2232F7EF0090D00F /* FriendListTableViewCell.swift in Sources */,
+				8300E2F7223313510090D00F /* PhotoFriendViewController.swift in Sources */,
+				830EAC692240EB750047B98A /* NewsListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +373,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = X5R57QV5ZV;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -295,7 +391,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -340,6 +436,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = X5R57QV5ZV;
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -350,9 +448,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -364,16 +463,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = 1l_ChernovaVV/1l_ChernovaVV.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X5R57QV5ZV;
 				INFOPLIST_FILE = 1l_ChernovaVV/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "home.-l-ChernovaVV";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -381,16 +486,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = 1l_ChernovaVV/1l_ChernovaVV.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X5R57QV5ZV;
 				INFOPLIST_FILE = 1l_ChernovaVV/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "home.-l-ChernovaVV";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
