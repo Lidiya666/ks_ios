@@ -7,11 +7,40 @@
 //
 
 import UIKit
+import Alamofire
 
 struct Friend {
     let image: String
     let name: String
 }
+
+//struct ResponseRoot: Decodable {
+//    let response: ResponseVk
+//}
+//
+//struct ResponseVk : Decodable {
+//    
+//    private enum  CodingKeys: String, CodingKey { case count, FriendsVk = "items" }
+//    
+//    let count : Int
+//    let FriendsVk : [FriendVk]
+//}
+//
+//struct FriendVk: Codable {
+//    let can_access_closed: String
+//    let city: City
+//    let first_name: String
+//    let id: Int
+//    let is_closed: Int
+//    let last_name: String
+//    let online: Int
+//    let photo_50: String
+//}
+//
+//struct City: Codable {
+//    let id: Int
+//    let title: String
+//}
 
 class FriendListViewController: UIViewController {
     
@@ -45,8 +74,7 @@ class FriendListViewController: UIViewController {
         friendListView.dataSource = self
         friendListView.delegate = self
         
-        let session = Session.instanse
-        vkService.loadVkData(access_token: session.token, user_id: session.userId, path: "/method/friends.get", fields: "city")
+        vkService.loadVkData(path: "/method/friends.get", fields: "city,photo_50")
         
         self.navigationController?.delegate = self
 

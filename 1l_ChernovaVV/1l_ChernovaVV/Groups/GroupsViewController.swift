@@ -10,6 +10,8 @@ import UIKit
 
 class GroupsViewController: UIViewController {
     
+    let vkService = VkService()
+    
     var groups = [
     ["Странный юмор", "g1"],
     ["Бумажный кораблик", "g2"]
@@ -21,6 +23,8 @@ class GroupsViewController: UIViewController {
         super.viewDidLoad()
         GroupsListView.dataSource = self
         // Do any additional setup after loading the view.
+        
+        vkService.loadVkData(path: "/method/groups.get", fields: "city,photo_50")
         
         self.navigationController?.delegate = self
     }

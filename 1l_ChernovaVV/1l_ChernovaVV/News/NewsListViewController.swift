@@ -10,6 +10,8 @@ import UIKit
 
 class NewsListViewController: UIViewController {
     
+    let vkService = VkService()
+    
     var newsFriends = [News(friend: Friend(image: "01", name: "Иван Андреич"), date: "2 дек 2018", imageNews: "new01", textNews: "", qtyLike: "4", qtyComment: "", qtyShare: "", qtyView: "126"),
                        News(friend: Friend(image: "05", name: "Аня Джулай"), date: "28 фев 2016", imageNews: "new02", textNews: "💚☀ @ Москва", qtyLike: "11", qtyComment: "", qtyShare: "", qtyView: "")]
     
@@ -33,6 +35,8 @@ class NewsListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        vkService.loadVkData(path: "/method/groups.get", fields: "city,photo_50")
         
         NewListView.dataSource = self
     }

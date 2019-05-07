@@ -15,8 +15,6 @@ class Session {
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var loginInput: UITextField!
-    @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var vkWebView: WKWebView!
     
     override func viewDidLoad() {
@@ -45,46 +43,7 @@ class LoginViewController: UIViewController {
         let request = URLRequest(url: urlComponents.url!)
         
         vkWebView.load(request)
-    }
-    
-    
-     //Функция, исполняющая проверку без сегвея, но с активностью кнопки Sign In
-     
-     @IBAction func loginButtonPressed(_ sender: Any) {
-        // Проверяем, верны ли введенные данные
-        
-        buttonLoading()
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-        }
-        
-        let checkResult = checkUserData()
-        
-        if !checkResult {
-            showLoginError()
-        }
-    }
-    
-    func checkUserData() -> Bool {
-        let login = loginInput.text!
-        let password = passwordInput.text!
-        
-        if login == "1" && password == "1" {
-            return true
-        } else {
-            return false
-        }
-    }
-    
-    func showLoginError() {
-        // Создаем контроллер
-        let alter = UIAlertController(title: "Ошибка", message: "Введены не верные данные пользователя", preferredStyle: .alert)
-        // Создаем кнопку для UIAlertController
-        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        // Добавляем кнопку на UIAlertController
-        alter.addAction(action)
-        // Показываем UIAlertController
-        present(alter, animated: true, completion: nil)
+//        logoutVk()
     }
     
     func buttonLoading() {
@@ -192,6 +151,8 @@ extension LoginViewController: WKNavigationDelegate {
             return
         }
         
+        buttonLoading()
+        
         let params = fragment
             .components(separatedBy: "&")
             .map { $0.components(separatedBy: "=") }
@@ -210,8 +171,17 @@ extension LoginViewController: WKNavigationDelegate {
         print(session.token)
         print(session.userId)
         
-        self.performSegue(withIdentifier: "vkWebViewToLoginSegue", sender:self)
+        self.performSegue(withIdentifier: "vkWebViewToLoginSegue", sender: self)
         
         decisionHandler(.cancel)
+    }
+    
+    func logoutVk() {
+        let dataStore = WKWebsiteDataStore.default()
+        dataStore.fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { records in
+            dataStore.removeData(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes(),
+                                 for: records.filter { $0.displayName.contains("vk") },
+                                 completionHandler: { })
+        }
     }
 }
