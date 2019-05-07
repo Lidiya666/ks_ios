@@ -1,0 +1,6 @@
+framework module Pods_1l_ChernovaVVTests {
+  umbrella header "Pods-1l_ChernovaVVTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

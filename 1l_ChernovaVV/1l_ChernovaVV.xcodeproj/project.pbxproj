@@ -20,6 +20,8 @@
 		832980B8224E1F1C009E1A9E /* CustomPushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832980B7224E1F1C009E1A9E /* CustomPushAnimator.swift */; };
 		832980BA224E1FAE009E1A9E /* CustomPopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832980B9224E1FAE009E1A9E /* CustomPopAnimator.swift */; };
 		8366004C224D296700C2E635 /* AnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8366004B224D296700C2E635 /* AnimatedTransitioning.swift */; };
+		83E041C7227836FE00D14F93 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E041C6227836FE00D14F93 /* WebKit.framework */; };
+		83E041C9227837A300D14F93 /* VkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E041C8227837A300D14F93 /* VkService.swift */; };
 		83EDE8EE2227CBAE004B7147 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EDE8ED2227CBAE004B7147 /* AppDelegate.swift */; };
 		83EDE8F32227CBAE004B7147 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83EDE8F12227CBAE004B7147 /* Main.storyboard */; };
 		83EDE8F62227CBAE004B7147 /* _l_ChernovaVV.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 83EDE8F42227CBAE004B7147 /* _l_ChernovaVV.xcdatamodeld */; };
@@ -27,6 +29,8 @@
 		83EDE8FB2227CBAF004B7147 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83EDE8F92227CBAF004B7147 /* LaunchScreen.storyboard */; };
 		83EDE9062227CBAF004B7147 /* _l_ChernovaVVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EDE9052227CBAF004B7147 /* _l_ChernovaVVTests.swift */; };
 		83EDE9112227CE08004B7147 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EDE9102227CE08004B7147 /* LoginViewController.swift */; };
+		8F4A365CA138F098136E6827 /* Pods_1l_ChernovaVV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1729CB397BCE8C3007D904A /* Pods_1l_ChernovaVV.framework */; };
+		F4E8B8D8DF5640FB065229D5 /* Pods_1l_ChernovaVVTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6144C21996527CAD3B0C6CE /* Pods_1l_ChernovaVVTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		611EC67EA4946C53ECE5267D /* Pods-1l_ChernovaVV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-1l_ChernovaVV.debug.xcconfig"; path = "Target Support Files/Pods-1l_ChernovaVV/Pods-1l_ChernovaVV.debug.xcconfig"; sourceTree = "<group>"; };
+		6DCEC9A9610BB893705D296D /* Pods-1l_ChernovaVVTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-1l_ChernovaVVTests.debug.xcconfig"; path = "Target Support Files/Pods-1l_ChernovaVVTests/Pods-1l_ChernovaVVTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8300E2EE2232F7EF0090D00F /* FriendListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListTableViewCell.swift; sourceTree = "<group>"; };
 		8300E2F02232FA240090D00F /* FriendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
 		8300E2F6223313510090D00F /* PhotoFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFriendViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +60,8 @@
 		832980B7224E1F1C009E1A9E /* CustomPushAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPushAnimator.swift; sourceTree = "<group>"; };
 		832980B9224E1FAE009E1A9E /* CustomPopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopAnimator.swift; sourceTree = "<group>"; };
 		8366004B224D296700C2E635 /* AnimatedTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTransitioning.swift; sourceTree = "<group>"; };
+		83E041C6227836FE00D14F93 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		83E041C8227837A300D14F93 /* VkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VkService.swift; sourceTree = "<group>"; };
 		83EDE8EA2227CBAE004B7147 /* 1l_ChernovaVV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 1l_ChernovaVV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83EDE8ED2227CBAE004B7147 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83EDE8F22227CBAE004B7147 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,6 +73,10 @@
 		83EDE9052227CBAF004B7147 /* _l_ChernovaVVTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _l_ChernovaVVTests.swift; sourceTree = "<group>"; };
 		83EDE9072227CBAF004B7147 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83EDE9102227CE08004B7147 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B1729CB397BCE8C3007D904A /* Pods_1l_ChernovaVV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_1l_ChernovaVV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6144C21996527CAD3B0C6CE /* Pods_1l_ChernovaVVTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_1l_ChernovaVVTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD4331090FF506A3167CFE78 /* Pods-1l_ChernovaVV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-1l_ChernovaVV.release.xcconfig"; path = "Target Support Files/Pods-1l_ChernovaVV/Pods-1l_ChernovaVV.release.xcconfig"; sourceTree = "<group>"; };
+		EF56DF8C81784B145882E5F7 /* Pods-1l_ChernovaVVTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-1l_ChernovaVVTests.release.xcconfig"; path = "Target Support Files/Pods-1l_ChernovaVVTests/Pods-1l_ChernovaVVTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +84,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83E041C7227836FE00D14F93 /* WebKit.framework in Frameworks */,
+				8F4A365CA138F098136E6827 /* Pods_1l_ChernovaVV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,12 +93,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4E8B8D8DF5640FB065229D5 /* Pods_1l_ChernovaVVTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3617F90B2F09B0FC19816768 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83E041C6227836FE00D14F93 /* WebKit.framework */,
+				B1729CB397BCE8C3007D904A /* Pods_1l_ChernovaVV.framework */,
+				C6144C21996527CAD3B0C6CE /* Pods_1l_ChernovaVVTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8300E2F2223304360090D00F /* Friends */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +157,8 @@
 				83EDE8EC2227CBAE004B7147 /* 1l_ChernovaVV */,
 				83EDE9042227CBAF004B7147 /* 1l_ChernovaVVTests */,
 				83EDE8EB2227CBAE004B7147 /* Products */,
+				8728CCBA0A12E6AAABAE27EC /* Pods */,
+				3617F90B2F09B0FC19816768 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,6 +186,7 @@
 				83EDE8FC2227CBAF004B7147 /* Info.plist */,
 				83EDE8F42227CBAE004B7147 /* _l_ChernovaVV.xcdatamodeld */,
 				833224CF2274D81A00A3EF65 /* Animate */,
+				83E041C8227837A300D14F93 /* VkService.swift */,
 			);
 			path = 1l_ChernovaVV;
 			sourceTree = "<group>";
@@ -172,6 +200,17 @@
 			path = 1l_ChernovaVVTests;
 			sourceTree = "<group>";
 		};
+		8728CCBA0A12E6AAABAE27EC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				611EC67EA4946C53ECE5267D /* Pods-1l_ChernovaVV.debug.xcconfig */,
+				CD4331090FF506A3167CFE78 /* Pods-1l_ChernovaVV.release.xcconfig */,
+				6DCEC9A9610BB893705D296D /* Pods-1l_ChernovaVVTests.debug.xcconfig */,
+				EF56DF8C81784B145882E5F7 /* Pods-1l_ChernovaVVTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -179,9 +218,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 83EDE90A2227CBAF004B7147 /* Build configuration list for PBXNativeTarget "1l_ChernovaVV" */;
 			buildPhases = (
+				088E6604299073F8DBCA9992 /* [CP] Check Pods Manifest.lock */,
 				83EDE8E62227CBAE004B7147 /* Sources */,
 				83EDE8E72227CBAE004B7147 /* Frameworks */,
 				83EDE8E82227CBAE004B7147 /* Resources */,
+				69DF8FE45F21BE6E6E6F3644 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,6 +237,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 83EDE90D2227CBAF004B7147 /* Build configuration list for PBXNativeTarget "1l_ChernovaVVTests" */;
 			buildPhases = (
+				7B38059F3B7DD5F309B06BC4 /* [CP] Check Pods Manifest.lock */,
 				83EDE8FD2227CBAF004B7147 /* Sources */,
 				83EDE8FE2227CBAF004B7147 /* Frameworks */,
 				83EDE8FF2227CBAF004B7147 /* Resources */,
@@ -276,6 +318,75 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		088E6604299073F8DBCA9992 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-1l_ChernovaVV-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		69DF8FE45F21BE6E6E6F3644 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-1l_ChernovaVV/Pods-1l_ChernovaVV-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-1l_ChernovaVV/Pods-1l_ChernovaVV-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B38059F3B7DD5F309B06BC4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-1l_ChernovaVVTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		83EDE8E62227CBAE004B7147 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -292,6 +403,7 @@
 				8366004C224D296700C2E635 /* AnimatedTransitioning.swift in Sources */,
 				83EDE8EE2227CBAE004B7147 /* AppDelegate.swift in Sources */,
 				8300E2FF223343100090D00F /* GroupsTableViewCell.swift in Sources */,
+				83E041C9227837A300D14F93 /* VkService.swift in Sources */,
 				8300E2FD223341670090D00F /* GroupsViewController.swift in Sources */,
 				8300E2FB223315980090D00F /* PhotoFriendCollectionViewCell.swift in Sources */,
 				8300E2EF2232F7EF0090D00F /* FriendListTableViewCell.swift in Sources */,
@@ -461,6 +573,7 @@
 		};
 		83EDE90B2227CBAF004B7147 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 611EC67EA4946C53ECE5267D /* Pods-1l_ChernovaVV.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -484,6 +597,7 @@
 		};
 		83EDE90C2227CBAF004B7147 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD4331090FF506A3167CFE78 /* Pods-1l_ChernovaVV.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -507,6 +621,7 @@
 		};
 		83EDE90E2227CBAF004B7147 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DCEC9A9610BB893705D296D /* Pods-1l_ChernovaVVTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -527,6 +642,7 @@
 		};
 		83EDE90F2227CBAF004B7147 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF56DF8C81784B145882E5F7 /* Pods-1l_ChernovaVVTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

@@ -1,4 +1,6 @@
 import UIKit
+import Alamofire
+import WebKit
 
 class Session {
     
@@ -7,67 +9,41 @@ class Session {
     private init(){}
     
     var token = ""
-    var userId = 0
+    var userId = ""
 }
 
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var loginInput: UITextField!
-    @IBOutlet weak var passwordInput: UITextField!
+    @IBOutlet weak var vkWebView: WKWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        vkWebView.navigationDelegate = self
         
         //жест нажатия
         let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         
         //присваиваем его UIScrollView
         scrollView?.addGestureRecognizer(hideKeyboardGesture)
-    }
-    
-    
-     //Функция, исполняющая проверку без сегвея, но с активностью кнопки Sign In
-     
-     @IBAction func loginButtonPressed(_ sender: Any) {
-        // Проверяем, верны ли введенные данные
         
-        buttonLoading()
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "https"
+        urlComponents.host = "oauth.vk.com"
+        urlComponents.path = "/authorize"
+        urlComponents.queryItems = [
+            URLQueryItem(name: "client_id", value: "6965099"),
+            URLQueryItem(name: "display", value: "mobile"),
+            URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
+            URLQueryItem(name: "scope", value: "262150"),
+            URLQueryItem(name: "response_type", value: "token"),
+            URLQueryItem(name: "v", value: "5.95")
+        ]
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-        }
+        let request = URLRequest(url: urlComponents.url!)
         
-        let checkResult = checkUserData()
-        
-        if !checkResult {
-            showLoginError()
-        }
-        
-        let session = Session.instanse
-        session.token = "admin"
-        session.userId = 0
-    }
-    
-    func checkUserData() -> Bool {
-        let login = loginInput.text!
-        let password = passwordInput.text!
-        
-        if login == "1" && password == "1" {
-            return true
-        } else {
-            return false
-        }
-    }
-    
-    func showLoginError() {
-        // Создаем контроллер
-        let alter = UIAlertController(title: "Ошибка", message: "Введены не верные данные пользователя", preferredStyle: .alert)
-        // Создаем кнопку для UIAlertController
-        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        // Добавляем кнопку на UIAlertController
-        alter.addAction(action)
-        // Показываем UIAlertController
-        present(alter, animated: true, completion: nil)
+        vkWebView.load(request)
+//        logoutVk()
     }
     
     func buttonLoading() {
@@ -165,4 +141,47 @@ class LoginViewController: UIViewController {
         self.scrollView?.endEditing(true)
     }
 
+}
+
+extension LoginViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+        
+        guard let url = navigationResponse.response.url, url.path == "/blank.html", let fragment = url.fragment  else {
+            decisionHandler(.allow)
+            return
+        }
+        
+        buttonLoading()
+        
+        let params = fragment
+            .components(separatedBy: "&")
+            .map { $0.components(separatedBy: "=") }
+            .reduce([String: String]()) { result, param in
+                var dict = result
+                let key = param[0]
+                let value = param[1]
+                dict[key] = value
+                return dict
+        }
+        
+        let session = Session.instanse
+        session.token = params["access_token"] ?? ""
+        session.userId = params["user_id"] ?? ""
+        
+        print(session.token)
+        print(session.userId)
+        
+        self.performSegue(withIdentifier: "vkWebViewToLoginSegue", sender: self)
+        
+        decisionHandler(.cancel)
+    }
+    
+    func logoutVk() {
+        let dataStore = WKWebsiteDataStore.default()
+        dataStore.fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { records in
+            dataStore.removeData(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes(),
+                                 for: records.filter { $0.displayName.contains("vk") },
+                                 completionHandler: { })
+        }
+    }
 }
