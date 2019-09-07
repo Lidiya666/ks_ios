@@ -8,64 +8,48 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
-struct Friend {
-    let image: String
-    let name: String
+struct FriendVk {
+    let city: String
+    let first_name: String
+    let id: Int
+    let last_name: String
+    //let online: Int
+    let photo_100: String
+    
+    init(_ json: JSON) {
+        self.city = json["city"]["title"].stringValue
+        self.first_name = json["first_name"].stringValue
+        self.id = json["id"].intValue
+        self.last_name = json["last_name"].stringValue
+       // self.online = json["online"].intValue
+        self.photo_100 = json["photo_100"].stringValue
+    }
+    
 }
-
-//struct ResponseRoot: Decodable {
-//    let response: ResponseVk
-//}
-//
-//struct ResponseVk : Decodable {
-//    
-//    private enum  CodingKeys: String, CodingKey { case count, FriendsVk = "items" }
-//    
-//    let count : Int
-//    let FriendsVk : [FriendVk]
-//}
-//
-//struct FriendVk: Codable {
-//    let can_access_closed: String
-//    let city: City
-//    let first_name: String
-//    let id: Int
-//    let is_closed: Int
-//    let last_name: String
-//    let online: Int
-//    let photo_50: String
-//}
-//
-//struct City: Codable {
-//    let id: Int
-//    let title: String
-//}
 
 class FriendListViewController: UIViewController {
     
-    var friends = ["А": [Friend(image: "01", name: "Иван Андреич")],
-                   "Б": [Friend(image: "02", name: "Ульяна Байбак"),
-                         Friend(image: "03", name: "Злобный Боря")],
-                   "Г": [Friend(image: "04", name: "Макс Голодный")],
-                   "Д": [Friend(image: "05", name: "Аня Джулай")]]
+    var fFriendsVk = [FriendVk]()
+    var filterFriendsVk = [FriendVk]()
     
-    var filterFriends = [Friend]()
-    var fFriends = [Friend]()
+    var sectionNameVk = [String]()
     
-    var sectionName = [String]()
-    
-    struct Objects {
+    struct ObjectsVk {
         
-        var sectionName : String!
-        var sectionObjects : [Friend]!
+        var sectionNameVk : String!
+        var sectionObjectsVk : [FriendVk]!
     }
     
-    var objectArray = [Objects]()
+    var friendsVk = [String:[FriendVk]]()
+    
+    var objectArrayVk = [ObjectsVk]()
     
     let searchController = UISearchController (searchResultsController: nil )
     
-    let vkService = VkService()
+    var friendVk = [FriendVk]() //запрос данных из json
+    let getFriend = VkService()
     
     @IBOutlet weak var friendListView: UITableView!
     
@@ -74,28 +58,38 @@ class FriendListViewController: UIViewController {
         friendListView.dataSource = self
         friendListView.delegate = self
         
-        vkService.loadVkData(path: "/method/friends.get", fields: "city,photo_50")
+        /////запрос друзей
+        getFriend.loadVkData(path: "/method/friends.get", fields: "city,photo_100") { [weak self] friendVk in
+            self?.friendVk = friendVk
+            
+            friendVk.forEach { friend in
+                let key = String(describing: friend.last_name[friend.last_name.startIndex])
+                
+                guard (self?.friendsVk[key]) != nil else { self?.friendsVk[key] = [friend]; return }
+                self?.friendsVk[key]?.append(friend)
+            }
+            
+            for (key, value) in self!.friendsVk {
+                self!.objectArrayVk.append(ObjectsVk(sectionNameVk: key, sectionObjectsVk: value))
+            }
+            
+            self?.objectArrayVk = self!.objectArrayVk.sorted {$0.sectionNameVk < $1.sectionNameVk}
+            
+            for key in (self?.friendsVk.keys)! {
+                self!.sectionNameVk.append(key)
+                
+                guard let data = self!.friendsVk[key] else { continue }
+                
+                for value in data {
+                    self!.fFriendsVk.append(value)
+                }
+            }
+            
+            self?.friendListView.reloadData()
+        }
         
         self.navigationController?.delegate = self
-
-        
         self.friendListView.tableFooterView = UIView.init()
-        
-        for (key, value) in friends {
-            objectArray.append(Objects(sectionName: key, sectionObjects: value))
-        }
-        
-        objectArray = objectArray.sorted {$0.sectionName < $1.sectionName}
-        
-        for key in friends.keys {
-            sectionName.append(key)
-            
-            guard let data = friends[key] else { continue }
-            
-            for value in data {
-                fFriends.append(value)
-            }
-        }
         
         // Настройка контроллера поиска
         searchController.searchResultsUpdater = self
@@ -114,11 +108,11 @@ class FriendListViewController: UIViewController {
            if let indexPath = friendListView.indexPathForSelectedRow {
                 let dvc = segue.destination as! PhotoFriendViewController
                 // теперь ты имеешь доступ к переменным в этом контроллере
-                // и только те переменные которые ты тут передашь перейду с тобой в новый контроллер
+                // и только те переменные которые ты тут передашь перейдут с тобой в новый контроллер
                 if isFiltering() {
-                    dvc.friendNames = [filterFriends[indexPath.row].name]
+                    dvc.friendId = filterFriendsVk[indexPath.row].id
                 } else {
-                    dvc.friendNames = [objectArray[indexPath.section].sectionObjects[indexPath.row].name]
+                    dvc.friendId = objectArrayVk[indexPath.section].sectionObjectsVk[indexPath.row].id
                 }
             }
             
@@ -145,15 +139,15 @@ extension FriendListViewController: UITableViewDataSource {
         if isFiltering(){
             return 1
         } else {
-            return objectArray.count
+            return objectArrayVk.count
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering() {
-            return filterFriends.count
+            return filterFriendsVk.count
         } else {
-            return objectArray[section].sectionObjects.count
+            return objectArrayVk[section].sectionObjectsVk.count
         }
     }
     
@@ -161,13 +155,14 @@ extension FriendListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath) as! FriendListTableViewCell
         
         if isFiltering() {
-            cell.FriendName.text = filterFriends[indexPath.row].name
-            cell.photoFriendMini.image = UIImage(named: filterFriends[indexPath.row].image)
+            let friendVks = filterFriendsVk[indexPath.row]
+            cell.configure(with: friendVks) ///почему нельзя вынести из условия?
         } else {
-            cell.FriendName.text = objectArray[indexPath.section].sectionObjects[indexPath.row].name
-            cell.photoFriendMini.image = UIImage(named: objectArray[indexPath.section].sectionObjects[indexPath.row].image)
+            let friendVks = objectArrayVk[indexPath.section].sectionObjectsVk[indexPath.row]
+            cell.configure(with: friendVks)
         }
         
+        //cell.configure(with: friendVks)???
         
         return cell
     }
@@ -177,7 +172,7 @@ extension FriendListViewController: UITableViewDataSource {
         if isFiltering() {
             return nil
         } else {
-            return objectArray[section].sectionName
+            return objectArrayVk[section].sectionNameVk
         }
     }
 }
@@ -190,7 +185,6 @@ extension FriendListViewController: UITableViewDelegate {
 }
 
 extension FriendListViewController: UISearchResultsUpdating {
-    // MARK: - UISearchResultsUpdating Delegate
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text!)
     }
@@ -201,8 +195,8 @@ extension FriendListViewController: UISearchResultsUpdating {
     }
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-       filterFriends = fFriends.filter({( friend : Friend) -> Bool in
-            return friend.name.lowercased().contains(searchText.lowercased())
+       filterFriendsVk = fFriendsVk.filter({( friend : FriendVk) -> Bool in
+            return ("\(friend.first_name.lowercased()) \(friend.last_name.lowercased())").contains(searchText.lowercased())
         })
         
         friendListView.reloadData()

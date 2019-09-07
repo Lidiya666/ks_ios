@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class FriendListTableViewCell: UITableViewCell {
 
@@ -34,6 +35,14 @@ class FriendListTableViewCell: UITableViewCell {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         photoFriendMini.addShadowView()
+    }
+    
+    public func configure(with friendVk: FriendVk) {
+        let first_name = friendVk.first_name
+        FriendName.text = String(first_name + " " + friendVk.last_name)
+        
+        let url = URL(string: friendVk.photo_100)
+        photoFriendMini.kf.setImage(with: url)
     }
 }
 

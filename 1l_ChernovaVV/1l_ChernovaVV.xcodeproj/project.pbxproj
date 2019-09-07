@@ -19,6 +19,7 @@
 		830EAC692240EB750047B98A /* NewsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830EAC682240EB750047B98A /* NewsListTableViewCell.swift */; };
 		832980B8224E1F1C009E1A9E /* CustomPushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832980B7224E1F1C009E1A9E /* CustomPushAnimator.swift */; };
 		832980BA224E1FAE009E1A9E /* CustomPopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832980B9224E1FAE009E1A9E /* CustomPopAnimator.swift */; };
+		8354D13D231A603E00ED2460 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8354D13C231A603E00ED2460 /* Photo.swift */; };
 		8366004C224D296700C2E635 /* AnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8366004B224D296700C2E635 /* AnimatedTransitioning.swift */; };
 		83E041C7227836FE00D14F93 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E041C6227836FE00D14F93 /* WebKit.framework */; };
 		83E041C9227837A300D14F93 /* VkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E041C8227837A300D14F93 /* VkService.swift */; };
@@ -59,6 +60,7 @@
 		831E5F9D225A32E400E1BF4B /* 1l_ChernovaVV.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = 1l_ChernovaVV.entitlements; sourceTree = "<group>"; };
 		832980B7224E1F1C009E1A9E /* CustomPushAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPushAnimator.swift; sourceTree = "<group>"; };
 		832980B9224E1FAE009E1A9E /* CustomPopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopAnimator.swift; sourceTree = "<group>"; };
+		8354D13C231A603E00ED2460 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		8366004B224D296700C2E635 /* AnimatedTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTransitioning.swift; sourceTree = "<group>"; };
 		83E041C6227836FE00D14F93 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		83E041C8227837A300D14F93 /* VkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VkService.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				8300E2F02232FA240090D00F /* FriendListViewController.swift */,
 				8300E2F6223313510090D00F /* PhotoFriendViewController.swift */,
 				8300E2FA223315980090D00F /* PhotoFriendCollectionViewCell.swift */,
+				8354D13C231A603E00ED2460 /* Photo.swift */,
 			);
 			path = Friends;
 			sourceTree = "<group>";
@@ -351,12 +354,20 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-1l_ChernovaVV/Pods-1l_ChernovaVV-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -404,6 +415,7 @@
 				83EDE8EE2227CBAE004B7147 /* AppDelegate.swift in Sources */,
 				8300E2FF223343100090D00F /* GroupsTableViewCell.swift in Sources */,
 				83E041C9227837A300D14F93 /* VkService.swift in Sources */,
+				8354D13D231A603E00ED2460 /* Photo.swift in Sources */,
 				8300E2FD223341670090D00F /* GroupsViewController.swift in Sources */,
 				8300E2FB223315980090D00F /* PhotoFriendCollectionViewCell.swift in Sources */,
 				8300E2EF2232F7EF0090D00F /* FriendListTableViewCell.swift in Sources */,

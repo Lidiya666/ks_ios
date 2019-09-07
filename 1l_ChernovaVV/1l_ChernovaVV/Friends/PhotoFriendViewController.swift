@@ -7,32 +7,48 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+
+struct UserVk {
+    let first_name: String
+    let id: Int
+    let last_name: String
+    //let online: Int
+    let photo_max: String
+    
+    init(_ json: JSON) {
+        self.first_name = json["first_name"].stringValue
+        self.id = json["id"].intValue
+        self.last_name = json["last_name"].stringValue
+        // self.online = json["online"].intValue
+        self.photo_max = json["photo_max"].stringValue
+    }
+    
+}
 
 class PhotoFriendViewController: UIViewController {
     
-    var friendNames = [String]()
+    var friendId = Int()
     var qtyLikes = 783
+    let getPhoto = VkService()
+    var url = String()
     
-    var photoFriends = [Friend(image: "001", name: "Иван Андреич"),
-                        Friend(image: "002", name: "Ульяна Байбак"),
-                        Friend(image: "006", name: "Ульяна Байбак"),
-                        Friend(image: "003", name: "Злобный Боря"),
-                        Friend(image: "004", name: "Макс Голодный"),
-                        Friend(image: "005", name: "Аня Джулай")]
-    var photosFriend = [Friend]()
+    var userVk = [UserVk]()
     
 
     @IBOutlet weak var photoFriend: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        photoFriend.dataSource = self 
+        photoFriend.dataSource = self
         
-        for i in 0...photoFriends.count - 1 {
-            if photoFriends[i].name == friendNames[0] {
-                photosFriend.append(photoFriends[i])
-            }
+        getPhoto.loadUserVkData(path: "/method/users.get", fields: "photo_max", user_id: friendId) { [weak self] users in
+            self?.userVk = users
+            self?.url = String(describing: self!.userVk[0].photo_max)
+        self?.photoFriend.reloadData()
         }
+        
         
         let width = view.frame.width
         let layout = photoFriend.collectionViewLayout as! UICollectionViewFlowLayout
@@ -42,14 +58,15 @@ class PhotoFriendViewController: UIViewController {
 
 extension PhotoFriendViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photosFriend.count
+        return 1//photosFriend.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoFriendCell", for: indexPath) as! PhotoFriendCollectionViewCell
-        
-        cell.photoFriend.image = UIImage(named: photosFriend[indexPath.row].image)
+
+        let urlMod = URL(string: url)
+        cell.photoFriend.kf.setImage(with: urlMod)
         cell.photoFriend.contentMode = .scaleAspectFit
         
         cell.qtyLike.text = "\(qtyLikes)"

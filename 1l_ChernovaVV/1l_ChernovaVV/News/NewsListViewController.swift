@@ -36,7 +36,7 @@ class NewsListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        vkService.loadVkData(path: "/method/groups.get", fields: "city,photo_50")
+//        vkService.loadVkData(path: "/method/groups.get", fields: "city,photo_50")
         
         NewListView.dataSource = self
     }

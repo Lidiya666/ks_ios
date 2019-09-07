@@ -7,10 +7,28 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+
+struct GroupVk {
+    let name: String
+    let id: Int
+    let photo_100: String
+    
+    init(_ json: JSON) {
+        self.id = json["id"].intValue
+        self.name = json["name"].stringValue
+        // self.online = json["online"].intValue
+        self.photo_100 = json["photo_100"].stringValue
+    }
+    
+}
 
 class GroupsViewController: UIViewController {
     
-    let vkService = VkService()
+    let getGroups = VkService()
+    var groupGetVk = [GroupVk]() //запрос данных из json
+
     
     var groups = [
     ["Странный юмор", "g1"],
@@ -24,7 +42,11 @@ class GroupsViewController: UIViewController {
         GroupsListView.dataSource = self
         // Do any additional setup after loading the view.
         
-        vkService.loadVkData(path: "/method/groups.get", fields: "city,photo_50")
+        getGroups.loadGroupVkJSON(path: "/method/groups.get", fields: "photo_100") { [weak self] groupGetVk in
+            self?.groupGetVk = groupGetVk
+            self?.GroupsListView.reloadData()
+            
+        }
         
         self.navigationController?.delegate = self
     }
@@ -80,13 +102,14 @@ extension GroupsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return groups.count
+        return groupGetVk.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! GroupsTableViewCell
-        cell.groupName.text = groups[indexPath.row][0]
-        cell.groupPhoto.image = UIImage(named: groups[indexPath.row][1])
+        
+        let groupVks = groupGetVk[indexPath.row]
+        cell.configure(with: groupVks)
         
         return cell
     }
