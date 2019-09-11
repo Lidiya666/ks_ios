@@ -403,7 +403,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2wN-I2-baN">
-                                                    <rect key="frame" x="5" y="5.5" width="60" height="60"/>
+                                                    <rect key="frame" x="5" y="5" width="60" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="2wN-I2-baN" secondAttribute="height" multiplier="1:1" id="XRq-Oq-bl1"/>
                                                         <constraint firstAttribute="width" constant="60" id="yqe-CC-Pgh"/>
@@ -425,7 +425,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzO-5O-ZQw">
-                                                    <rect key="frame" x="75" y="5.5" width="225" height="60"/>
+                                                    <rect key="frame" x="75" y="5" width="225" height="60"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -435,16 +435,15 @@
                                                 <constraint firstItem="2wN-I2-baN" firstAttribute="centerY" secondItem="v0X-H7-zWc" secondAttribute="centerY" id="2L8-P6-pwh"/>
                                                 <constraint firstItem="2wN-I2-baN" firstAttribute="bottom" secondItem="rzO-5O-ZQw" secondAttribute="bottom" id="5aQ-3j-abo"/>
                                                 <constraint firstItem="2wN-I2-baN" firstAttribute="top" secondItem="rzO-5O-ZQw" secondAttribute="top" id="MR4-LU-ViE"/>
-                                                <constraint firstItem="2wN-I2-baN" firstAttribute="top" secondItem="v0X-H7-zWc" secondAttribute="top" constant="5" id="PFC-Cq-25C"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="rzO-5O-ZQw" secondAttribute="trailing" constant="5" id="PSw-4W-dGJ"/>
                                                 <constraint firstItem="rzO-5O-ZQw" firstAttribute="leading" secondItem="2wN-I2-baN" secondAttribute="trailing" constant="10" id="kAV-F8-3gv"/>
                                                 <constraint firstItem="2wN-I2-baN" firstAttribute="leading" relation="lessThanOrEqual" secondItem="v0X-H7-zWc" secondAttribute="leading" constant="5" id="tA7-HR-FTe"/>
-                                                <constraint firstAttribute="bottom" secondItem="2wN-I2-baN" secondAttribute="bottom" constant="5" id="vGT-ey-EAW"/>
+                                                <constraint firstAttribute="bottom" secondItem="2wN-I2-baN" secondAttribute="bottom" priority="999" constant="5" id="vGT-ey-EAW"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="FriendName" destination="rzO-5O-ZQw" id="KtP-Sd-IEK"/>
-                                            <outlet property="photoFriendMini" destination="2wN-I2-baN" id="suo-vo-b4K"/>
+                                            <outlet property="photoFriendMini" destination="2wN-I2-baN" id="0MX-5V-u1o"/>
                                             <segue destination="jsk-5W-RZt" kind="show" identifier="detailSegue" id="edM-tH-ZSE"/>
                                         </connections>
                                     </tableViewCell>

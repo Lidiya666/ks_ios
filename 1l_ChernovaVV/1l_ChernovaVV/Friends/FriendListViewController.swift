@@ -63,7 +63,8 @@ class FriendListViewController: UIViewController {
             self?.friendVk = friendVk
             
             friendVk.forEach { friend in
-                let key = String(describing: friend.last_name[friend.last_name.startIndex])
+                //let key = String(describing: friend.last_name[friend.last_name.startIndex])
+                let key = friend.last_name.isEmpty ? "!" : String(describing: friend.last_name[friend.last_name.startIndex])
                 
                 guard (self?.friendsVk[key]) != nil else { self?.friendsVk[key] = [friend]; return }
                 self?.friendsVk[key]?.append(friend)
@@ -153,16 +154,9 @@ extension FriendListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath) as! FriendListTableViewCell
-        
-        if isFiltering() {
-            let friendVks = filterFriendsVk[indexPath.row]
-            cell.configure(with: friendVks) ///почему нельзя вынести из условия?
-        } else {
-            let friendVks = objectArrayVk[indexPath.section].sectionObjectsVk[indexPath.row]
-            cell.configure(with: friendVks)
-        }
-        
-        //cell.configure(with: friendVks)???
+                
+        let friendVks = isFiltering() ? filterFriendsVk[indexPath.row] : objectArrayVk[indexPath.section].sectionObjectsVk[indexPath.row]
+        cell.configure(with: friendVks)
         
         return cell
     }
